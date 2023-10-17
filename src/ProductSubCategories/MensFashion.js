@@ -17,7 +17,7 @@ const MensFashion = ({ addToCart, count }) => {
     }
 
     useEffect(() => {
-        axios.get("https://backend-ecommer-dq0g.onrender.com/products/mensfashion")
+        axios.get("https://vikasecommerce-1ogg.onrender.com/products/mensfashion")
             .then((response) => setData(response.data))
             .catch((error) => console.log("Error", error))
     }, [])

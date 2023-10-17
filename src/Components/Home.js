@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 // import HomeBannerCarousel from './HomeBannerCarousel'
 import BestSellers from '../BestSellers/BestSellers'
 import HomeBannerAutoCarousel from './HomeBannerAutoCarousel'
-import Perks from './Perks'
+import Services from './Services'
 import FeaturedProducts from './FeaturedProducts'
 import Footer from './Footer'
 import { Link } from 'react-router-dom'
@@ -34,7 +34,7 @@ const Home = ({ count }) => {
             <Navbar count={count} />
             <HomeBannerAutoCarousel />
             <FeaturedProducts />
-            <Perks />
+            <Services />
             <div id='best-sellers'>
                 <h3>BEST SELLERS</h3>
                 <BestSellers />

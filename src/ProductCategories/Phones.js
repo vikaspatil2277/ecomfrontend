@@ -31,19 +31,7 @@ const Phones= ({ addToCart, count }) => {
         <>
             <Navbar count={count} />
             <MdOutlineArrowBackIosNew className='back-icon' onClick={goBack} />
-            {/* <div className='product-category-dropdown-container'>
-                <div className="product-category-dropdown">
-                    <button className="product-category-dropdown-btn">SHOP BY CATEGORY IN SPORTS <IoIosArrowDown /></button>
-                    <div className="product-category-dropdown-content">
-                        <Link to='/sports/cricket'>Cricket</Link>
-                        <Link to='/sports/badminton'>Badminton</Link>
-                        <Link to='/sports/football'>Football</Link>
-                        <Link to='/sports/yoga'>Yoga</Link>
-                        <Link to='/sports/campingandhiking'>Camping and Hiking</Link>
-                        <Link to='/sports/strengthtraining'>Strength Training</Link>
-                    </div>
-                </div>
-            </div> */}
+            
             <h4 className='headings'>Phones</h4>
             <div className='products-data-container'>
                 <div className='products-data'>

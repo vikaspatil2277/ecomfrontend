@@ -33,17 +33,7 @@ const Laptops = ({ addToCart, count }) => {
         <>
             <Navbar count={count} />
             <MdOutlineArrowBackIosNew className='back-icon' onClick={goBack} />
-            {/* <div className='product-category-dropdown-container'>
-                <div className="product-category-dropdown">
-                    <button className="product-category-dropdown-btn">SHOP BY CATEGORY IN BOOKS <IoIosArrowDown /></button>
-                    <div className="product-category-dropdown-content">
-                        <Link to='/books/fictionbooks'>Fiction Books</Link>
-                        <Link to='/books/editorscorner'>Editor's Corner</Link>
-                        <Link to='/books/indianlanguagebooks'>Indian Language Books</Link>
-                        <Link to='/books/schooltextbooks'>School Textbooks</Link>
-                    </div>
-                </div>
-            </div> */}
+           
             <h4 className='headings'>LAPTOPS</h4>
             <div className='products-data-container'>
                 <div className='products-data'>

@@ -4,7 +4,7 @@ import shippingIcon from '../Assets/Home Page/shipping.png'
 import refundIcon from '../Assets/Home Page/refund.png'
 import supportIcon from '../Assets/Home Page/support.png'
 
-const Perks = () => {
+const Services = () => {
     return (
         <>
             <div className='perks'>
@@ -30,4 +30,4 @@ const Perks = () => {
     )
 }
 
-export default Perks
+export default Services

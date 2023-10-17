@@ -4,7 +4,6 @@ import './Components.css'
 import { BiHomeAlt2 } from 'react-icons/bi'
 import { RiShoppingCart2Line } from 'react-icons/ri'
 import { FiLogOut } from 'react-icons/fi'
-// import userContext from '../context/userContext'
 
 const UserProfile = () => {
     const navigate = useNavigate();
@@ -14,7 +13,6 @@ const UserProfile = () => {
         navigate('/')
     }
 
-    // const {user} = useContext(userContext);
     return (
         <>
             <div className='user-profile-page'>
