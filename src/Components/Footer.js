@@ -13,7 +13,7 @@ const Footer = () => {
             <div className='footer-upper'>
                 <div className='about-shopit'>
                     <div>
-                        <h1>SHOPIT</h1>
+                        <h1>ishop</h1>
                         <p>Shop 'til you drop with Shopit ! <br /> Get it all with Shopit <br /> the ultimate e-commerce destination</p>
                     </div>
                     <div>
@@ -32,12 +32,11 @@ const Footer = () => {
             <div className='footer-down'>
                 <div>
                     <h5>SHOP BY CATEGORY</h5>
-                    <Link to='/electronics' className='footer-links'>Electronics</Link>
+                    <Link to='/phones' className='footer-links'>Phones</Link>
+                    <Link to='/laptops' className='footer-links'>Laptops</Link>
+                    <Link to='/television' className='footer-links'>TElevision</Link>
                     <Link to='/fashion' className='footer-links'>Fashion</Link>
-                    <Link to='/homeandkitchen' className='footer-links'>Home and Kitchen</Link>
-                    <Link to='/healthandpersonalcare' className='footer-links'>Health and Personal Care</Link>
-                    <Link to='/sports' className='footer-links'>Sports</Link>
-                    <Link to='/books' className='footer-links'>Books</Link>
+               
                 </div>
                 <div>
                     <h5>ABOUT US</h5>
@@ -57,7 +56,7 @@ const Footer = () => {
                 <div>
                     <h5>CONTACT</h5>
                     <h6>EMAIL</h6>
-                    <p>vikaspatill@gmail.com</p>
+                    <p>vikaspatill2277@gmail.com</p>
                     <h6>TELEPHONE</h6>
                     <p>7038035577</p>
                 </div>

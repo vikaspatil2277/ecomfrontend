@@ -1,12 +1,13 @@
 import React from 'react'
+import '../Components/Components.css'
 import Navbar from '../Components/Navbar'
+import { Link, useNavigate } from 'react-router-dom'
+// import { IoIosArrowDown } from 'react-icons/io'
 import { MdOutlineArrowBackIosNew } from 'react-icons/md'
-import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 
-const Headphones = ({ addToCart, count }) => {
+const Phones= ({ addToCart, count }) => {
     const [data, setData] = useState([]);
     const [visible, setVisible] = useState(6)
 
@@ -17,24 +18,37 @@ const Headphones = ({ addToCart, count }) => {
     }
 
     useEffect(() => {
-        axios.get("https://backend-ecommer-dq0g.onrender.com/products/headphones")
+        axios.get("https://vikasecommerce-1ogg.onrender.com/products/phones")
             .then((response) => setData(response.data))
             .catch((error) => console.log("Error", error))
     }, [])
 
     const loadMoreItems = () => {
-        setVisible(prevValue => prevValue + 3)
+        setVisible(prevValue => prevValue + 6)
     }
 
     return (
         <>
             <Navbar count={count} />
             <MdOutlineArrowBackIosNew className='back-icon' onClick={goBack} />
-            <h4 className='headings'>HEADPHONES</h4>
+            {/* <div className='product-category-dropdown-container'>
+                <div className="product-category-dropdown">
+                    <button className="product-category-dropdown-btn">SHOP BY CATEGORY IN SPORTS <IoIosArrowDown /></button>
+                    <div className="product-category-dropdown-content">
+                        <Link to='/sports/cricket'>Cricket</Link>
+                        <Link to='/sports/badminton'>Badminton</Link>
+                        <Link to='/sports/football'>Football</Link>
+                        <Link to='/sports/yoga'>Yoga</Link>
+                        <Link to='/sports/campingandhiking'>Camping and Hiking</Link>
+                        <Link to='/sports/strengthtraining'>Strength Training</Link>
+                    </div>
+                </div>
+            </div> */}
+            <h4 className='headings'>Phones</h4>
             <div className='products-data-container'>
                 <div className='products-data'>
                     {
-                        data.slice(0, visible).filter((item, index) => { return item.id >= 46 && item.id <= 60 }).map((element, index) => (
+                        data.slice(0, visible).filter((item, index) => { return item.id >= 16 && item.id <= 30 }).map((element, index) => (
                             <div className='product-card' key={index}>
                                 <Link to={`/detaildescription/${element.id}`} ><img src={element.productImage1} alt=""></img></Link>
                                 <div className='product-card-data-description'>
@@ -48,10 +62,10 @@ const Headphones = ({ addToCart, count }) => {
                 </div>
             </div>
             <div className='load-more-products-container'>
-                <button onClick={loadMoreItems} className={visible === 15 ? 'load-more-products-button-hidden' : 'load-more-products-button-visible'}>LOAD MORE PRODUCTS »</button>
+                <button onClick={loadMoreItems} className={visible === 15? 'load-more-products-button-hidden' : 'load-more-products-button-visible'}>LOAD MORE PRODUCTS »</button>
             </div>
         </>
     )
 }
 
-export default Headphones
+export default Phones

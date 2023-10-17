@@ -12,7 +12,6 @@ const Cart = ({ cart, count }) => {
 
     const [CART, setCART] = useState([]);
 
-
     useEffect(() => {
         setCART(cart)
     }, [cart])
@@ -43,7 +42,9 @@ const Cart = ({ cart, count }) => {
                                                         return cartIndex === index ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : item.quantity } : item
                                                     })
                                                     setCART(_CART)
-                                                }} className='increment'><span className='minus'>-</span></button>
+                                                }} 
+                                                
+                                                className='increment'><span className='minus'>-</span></button>
                                                 <span className='cart-quantity'>{cartItem.quantity}</span>
                                                 <button onClick={() => {
                                                     const _CART = CART.map((item, index) => {

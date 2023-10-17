@@ -1,12 +1,13 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
+import '../Components/Components.css'
+import { Link, useNavigate } from 'react-router-dom'
+// import { IoIosArrowDown } from 'react-icons/io'
 import { MdOutlineArrowBackIosNew } from 'react-icons/md'
-import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 
-const EditorsCorner = ({ addToCart, count }) => {
+const Electronics = ({ addToCart, count }) => {
     const [data, setData] = useState([]);
     const [visible, setVisible] = useState(6)
 
@@ -17,24 +18,25 @@ const EditorsCorner = ({ addToCart, count }) => {
     }
 
     useEffect(() => {
-        axios.get("https://vikasecommerce-1ogg.onrender.com/products/editorscorner")
+        axios.get("https://vikasecommerce-1ogg.onrender.com/products/television")
             .then((response) => setData(response.data))
             .catch((error) => console.log("Error", error))
     }, [])
 
     const loadMoreItems = () => {
-        setVisible(prevValue => prevValue + 3)
+        setVisible(prevValue => prevValue + 6)
     }
 
     return (
         <>
             <Navbar count={count} />
             <MdOutlineArrowBackIosNew className='back-icon' onClick={goBack} />
-            <h4 className='headings'>EDITOR'S CORNER</h4>
+          
+            <h4 className='headings'>TELEVISION</h4>
             <div className='products-data-container'>
                 <div className='products-data'>
                     {
-                        data.slice(0, visible).filter((item, index) => { return item.id >= 436 && item.id <= 450 }).map((element, index) => (
+                        data.slice(0, visible).filter((item, index) => { return item.id >= 61 && item.id <= 75}).map((element, index) => (
                             <div className='product-card' key={index}>
                                 <Link to={`/detaildescription/${element.id}`} ><img src={element.productImage1} alt=""></img></Link>
                                 <div className='product-card-data-description'>
@@ -48,10 +50,10 @@ const EditorsCorner = ({ addToCart, count }) => {
                 </div>
             </div>
             <div className='load-more-products-container'>
-                <button onClick={loadMoreItems} className={visible === 15 ? 'load-more-products-button-hidden' : 'load-more-products-button-visible'}>LOAD MORE PRODUCTS »</button>
+                <button onClick={loadMoreItems} className={visible === 90 ? 'load-more-products-button-hidden' : 'load-more-products-button-visible'}>LOAD MORE PRODUCTS »</button>
             </div>
         </>
     )
 }
 
-export default EditorsCorner
+export default Electronics

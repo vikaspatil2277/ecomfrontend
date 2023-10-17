@@ -9,13 +9,14 @@ import healthAndPersonalCareAutoCarouselImage from '../Assets/Home Page/corousel
 import electronicsAutoCarouselImage2 from '../Assets/Home Page/corousel_2.png'
 import fashionAutoCarouselImage2 from '../Assets/Home Page/corousel_3.png'
 import healthAndPersonalCareAutoCarouselImage2 from '../Assets/Home Page/corousel_1.png'
+// import { Carousel } from 'bootstrap';
 
 const HomeBannerAutoCarousel = () => {
     const settings = {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay:true,
         speed: 5000,
         autoplaySpeed: 500,
         cssEase: "linear"
@@ -45,6 +46,8 @@ const HomeBannerAutoCarousel = () => {
                         </div>
                     </Slider>
                 </div>
+
+               
             </div>
         </>
     )

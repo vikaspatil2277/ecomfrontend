@@ -17,9 +17,12 @@ const Home = ({ count }) => {
     const [visible, setVisible] = useState(6)
 
     useEffect(() => {
-        axios.get("https://backend-ecommer-dq0g.onrender.com/products/cellphonesandaccessories")
+        axios.get("https://vikasecommerce-1ogg.onrender.com/products/cellphonesandaccessories")
             .then((response) => setData(response.data))
             .catch((error) => console.log("Error", error))
+
+
+            
         }, [])
         
     const loadMoreItems = () => {
@@ -38,7 +41,7 @@ const Home = ({ count }) => {
                 <div className='bestseller-products-data-container'>
                     <div className='bestseller-products-data'>
                         {
-                            data.slice(0, visible).filter((item, index) => { return item.id >= 16 && item.id <= 30 }).map((element, index) => (
+                            data.slice(0, visible).filter((item, index) => { return item.id >= 16 && item.id <= 21 }).map((element, index) => (
                                 <div className='bestseller-product-card' key={index}>
                                     <Link to={`/detaildescription/${element.id}`} ><img src={element.productImage1} alt=""></img></Link>
                                     <div className='bestseller-product-card-data-description'>
@@ -48,7 +51,10 @@ const Home = ({ count }) => {
                                 </div>
                             ))
                         }
+
+
                     </div>
+                      
                 </div>
                 <div className='load-more-products-container-home'>
                     <button onClick={loadMoreItems} className={visible === 15 ? 'load-more-products-button-hidden' : 'load-more-products-button-visible'}>LOAD MORE</button>

@@ -1,40 +1,45 @@
+
 import React from 'react'
+import "../Components/Components.css"
 import Navbar from '../Components/Navbar'
-import HomeBannerCarousel from '../Components/HomeBannerCarousel'
-import BestSellers from './BestSellers'
+// import HomeBannerCarousel from './HomeBannerCarousel'
+import BestSellers from '../BestSellers/BestSellers'
 import HomeBannerAutoCarousel from '../Components/HomeBannerAutoCarousel'
 import Perks from '../Components/Perks'
 import FeaturedProducts from '../Components/FeaturedProducts'
 import Footer from '../Components/Footer'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 
-const BestSellerSports = () => {
+
+const Home = ({ count }) => {
     const [data, setData] = useState([]);
-    const [visible, setVisible] = useState(6)
+    const [visible, setVisible] = useState(10)
 
     useEffect(() => {
-        axios.get("https://backend-ecommer-dq0g.onrender.com/products/football")
+        axios.get("https://vikasecommerce-1ogg.onrender.com/products/television")
             .then((response) => setData(response.data))
             .catch((error) => console.log("Error", error))
-    }, [])
-
+        }, [])
+        
     const loadMoreItems = () => {
         setVisible(prevValue => prevValue + 3)
     }
 
     return (
         <>
-            <Navbar />
-            <HomeBannerCarousel />
+            <Navbar count={count} />
+            <HomeBannerAutoCarousel />
+            <FeaturedProducts />
+            <Perks />
             <div id='best-sellers'>
                 <h3>BEST SELLERS</h3>
                 <BestSellers />
                 <div className='bestseller-products-data-container'>
                     <div className='bestseller-products-data'>
                         {
-                            data.slice(0, visible).filter((item, index) => { return item.id >= 346 && item.id <= 360 }).map((element, index) => (
+                            data.slice(0, visible).filter((item, index) => { return item.id >= 65 && item.id <= 75 }).map((element, index) => (
                                 <div className='bestseller-product-card' key={index}>
                                     <Link to={`/detaildescription/${element.id}`} ><img src={element.productImage1} alt=""></img></Link>
                                     <div className='bestseller-product-card-data-description'>
@@ -46,17 +51,15 @@ const BestSellerSports = () => {
                         }
                     </div>
                 </div>
-                <div className='load-more-products-container'>
-                    <button onClick={loadMoreItems} className={visible === 15 ? 'load-more-products-button-hidden' : 'load-more-products-button-visible'}>LOAD MORE PRODUCTS »</button>
+                <div className='load-more-products-container-home'>
+                    <button onClick={loadMoreItems} className={visible === 15 ? 'load-more-products-button-hidden' : 'load-more-products-button-visible'}>LOAD MORE</button>
                 </div>
             </div>
-            <HomeBannerAutoCarousel />
-            <Perks />
-            <FeaturedProducts />
+            {/* <HomeBannerCarousel /> */}
             <hr className='home-hr' />
             <Footer />
         </>
     )
 }
 
-export default BestSellerSports
+export default Home

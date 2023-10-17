@@ -48,7 +48,7 @@ const Register = () => {
             <div id='register-page'>
                 <MdOutlineArrowBackIosNew className='login-register-back-icon' onClick={goBackFromRegisterPage} />
                 <div className='login-register-header'>
-                    <Link to='/' className='shopit-logo-link'><h1>MYSHOP</h1></Link>
+                    <Link to='/' className='shopit-logo-link'><h1>iSHOP</h1></Link>
                 </div>
                 <div className='login-register-container'>
                     <div className='login-register-form'>
