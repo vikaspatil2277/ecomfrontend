@@ -14,10 +14,10 @@ import { useEffect, useState } from 'react'
 
 const Home = ({ count }) => {
     const [data, setData] = useState([]);
-    const [visible, setVisible] = useState(6)
+    const [visible, setVisible] = useState(9)
 
     useEffect(() => {
-        axios.get("https://vikasecommerce-1ogg.onrender.com/products/cellphonesandaccessories")
+        axios.get("https://vikasecommerce-1ogg.onrender.com/products/mixed")
             .then((response) => setData(response.data))
             .catch((error) => console.log("Error", error))
 
@@ -41,7 +41,7 @@ const Home = ({ count }) => {
                 <div className='bestseller-products-data-container'>
                     <div className='bestseller-products-data'>
                         {
-                            data.slice(0, visible).filter((item, index) => { return item.id >= 16 && item.id <= 21 }).map((element, index) => (
+                            data.slice(0, visible).filter((item, index) => { return item.id >= 151 && item.id <= 162}).map((element, index) => (
                                 <div className='bestseller-product-card' key={index}>
                                     <Link to={`/detaildescription/${element.id}`} ><img src={element.productImage1} alt=""></img></Link>
                                     <div className='bestseller-product-card-data-description'>
@@ -68,3 +68,7 @@ const Home = ({ count }) => {
 }
 
 export default Home
+
+
+
+

@@ -700,7 +700,8 @@ nav{
     justify-content: flex-end;
 }
 .checkout button{
-    width: 62rem;
+    margin-right:20%;
+    width: 30rem;
     height: 3.5rem;
     border-radius: 0.3rem;
     border: none;
@@ -735,7 +736,7 @@ nav{
 
 @media screen and (min-width: 320px) and (max-width: 600px) {
 header {
-    width: 203.5%;
+    width: 207.5%;
     height: 11rem;
 }
 header h1{
@@ -763,13 +764,13 @@ nav {
 }
 .mobile-menu-icon {
     display: block;
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     position: absolute;
     top: 1.7rem;
     left: 44rem;
     border: none;
-    background-color: black;
-    color: white;
+    background-color:orange;
+    color: black;
 }
 .dropdown-content{
     display: none;
@@ -789,6 +790,7 @@ nav {
 .links{
     font-size: 2rem;
     border-bottom: none;
+    margin: 0.4rem;
 }
 .go-to-login-link{
     font-size: 1rem;
@@ -832,7 +834,9 @@ nav {
 .auto-carousel-container {
     width: 200%;
 }
-
+.slick-list{
+    left: 2%;
+}
 .auto-carousel {
     width: 195vw;
     height: 30rem;
@@ -841,6 +845,7 @@ nav {
 .auto-carousel img {
     width: 195vw;
     height: 30rem;
+    margin-left: 5%;
 }
 .perks{
     width: 203.5%;
