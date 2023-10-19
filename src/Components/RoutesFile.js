@@ -40,7 +40,7 @@ const RoutesFile = () => {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/cart' element={<Cart cart={cart} count={cart.length} />} />
-          <Route path='/' element={<Home count={cart.length} />} />
+          <Route path='/' element={<Home addToCart={addToCart} count={cart.length} />} />
           <Route path='/store' element={<Store addToCart={addToCart} count={cart.length} />} />
 
 

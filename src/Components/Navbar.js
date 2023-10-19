@@ -21,7 +21,7 @@ const Navbar = () => {
                     {/* <button><MdSearch className='profile-cart-search-icon ' /></button> */}
                     </div>
                     {isLogged ? <NavLink to='/userprofile' id='user-profile'><BsPersonCircle className='profile-cart-search-icon' /><span>MY PROFILE</span></NavLink> : <NavLink to='/login' activeClassName='active' id='user-profile'><BsPersonCircle className='profile-cart-search-icon' /><span>LOGIN</span></NavLink>}
-                    <NavLink to='/cart' id='user-cart'><RiShoppingCartFill className='profile-cart-search-icon' /><span>MY CART</span></NavLink>
+                    <NavLink to='/cart' id='user-cart'><RiShoppingCartFill className='profile-cart-search-icon' /><span>MY CART </span></NavLink>
                 </div>
             </header>
             <nav className={isMobile ? "nav-links-mobile" : null} onClick={() => { setIsMobile(false) }}>

@@ -13,8 +13,15 @@ import { useEffect, useState } from 'react'
 
 
 const Home = ({ count }) => {
+
     const [data, setData] = useState([]);
     const [visible, setVisible] = useState(9)
+    const [cart, setCart] = useState([]);
+    console.log(cart)
+    const addToCart = (data) => {
+        setCart([...cart, { ...data, quantity: 1 }])
+        alert('Item Added to cart successfully !!')
+      }
 
     useEffect(() => {
         axios.get("https://vikasecommerce-1ogg.onrender.com/products/mixed")
@@ -33,7 +40,7 @@ const Home = ({ count }) => {
         <>
             <Navbar count={count} />
             <HomeBannerAutoCarousel />
-            <FeaturedProducts />
+            <FeaturedProducts addToCart={addToCart} count={cart.length} />
             <Services />
             <div id='best-sellers'>
                 <h3>BEST SELLERS</h3>
